@@ -47,8 +47,9 @@ class Welcome {
             return;
         }
 
-        // send message globally to channel and private message new user
+        // send message globally to channel
         resp.send(`Hello @${resp.message.user.name}, welcome to my test channel`);
+        // private messages new user
         this.hubot.send({room: resp.message.user.id}, 'hey there pal');
 
         // store user name in redis after welcomed
